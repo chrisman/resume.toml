@@ -1,0 +1,130 @@
+.EH ''''
+.OH ''''
+.nr HM .5i
+.nr FM .5i
+.TS H
+center tab(;);
+cbx s
+c s
+c s
+cfI s.
+.TH
+./" ============
+./" == HEADER ==
+./" ============
+{{#basics}}
+{{name}}
+{{email}} - {{phone}}
+{{#profiles}} {{{url}}} {{/profiles}}
+.sp 1
+T{
+{{{summary}}}
+T}
+{{/basics}}
+.sp 1
+.
+.
+.
+./" ==========
+./" == WORK ==
+./" ==========
+.T&
+lbv1 s
+-  -
+{{#work}}
+lb r
+l r
+{{#highlights}}
+l s
+{{/highlights}}
+{{/work}}
+l l.
+Experience
+.ds
+{{#work}}
+{{{name}}};{{{location}}}
+{{{position}}};{{startDate}}-{{endDate}}
+{{#highlights}}
+T{
+.IP \(bu
+{{{.}}}
+T}
+{{/highlights}}
+.de
+.sp 1
+{{/work}}
+;
+.
+.
+.
+.\" ============
+.\" == SKILLS ==
+.\" ============
+.T&
+lb s
+-  -
+{{#skills}}
+l s
+{{/skills}}
+l s.
+Skills
+{{#skills}}
+{{{name}}}: {{#keywords}} {{{.}}} {{/keywords}}
+{{/skills}}
+;
+.
+.
+.
+.\" ============
+.\" == AWARDS ==
+.\" ============
+.T&
+lb s
+-  -
+{{#awards}}
+l r
+{{/awards}}
+l r.
+Awards
+{{#awards}}
+{{title}}, {{awarder}};{{date}}
+{{/awards}}
+;
+.
+.
+.
+.\" ===============
+.\" == EDUCATION ==
+.\" ===============
+.T&
+lb s
+-  -
+{{#education}}
+l r
+{{/education}}
+l l.
+Education
+{{#education}}
+{{institution}}, {{area}};{{startDate}}-{{endDate}}
+{{/education}}
+;
+.
+.
+.
+.\" ===============
+.\" == INTERESTS ==
+.\" ===============
+.T&
+lb s
+-  -
+{{#interests}}
+l s
+{{/interests}}
+l s.
+Interests
+{{#interests}}
+{{name}}: {{#keywords}} {{{.}}} {{/keywords}}
+{{/interests}}
+;
+.TE
+
