@@ -1,0 +1,207 @@
+<style>
+  body {
+    width: 8.5in;
+    margin: 0 auto;
+  }
+  p {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0 1em;
+  }
+  h2 {
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: solid 1px black;
+  }
+  header {
+    text-align: center;
+
+    .basics {
+      font-size: small;
+    }
+
+    .summary {
+      margin: 1em;
+      font-style: italic;    
+    }
+  }
+  section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    p:nth-child(2) {
+      text-align: right;
+    }
+  }
+  #experience div:first-child {
+    p:first-child {
+      font-weight: bold;
+      font-size: larger;
+      margin-top: 0.5em;
+    }
+  }
+  #projects > div > p:first-child {
+    font-weight: bold;
+  }
+  .role {
+    text-decoration: underline;
+    font-size: large;
+  }
+  section.table div {
+    justify-content: flex-start;
+    align-items: start;
+
+    p:first-child{
+      text-align: right;
+      width: 10em;
+      margin-right: 2em;
+    }
+
+    p:nth-child(2) {
+      text-align: left;
+    }
+  }
+</style>
+<header>
+  {{#basics}}
+  <h1>{{name}}</h1>
+  <div class="basics">
+    <p>
+    {{email}} - {{phone}}
+    </p>
+    <p>
+    {{#profiles}} {{{url}}} {{/profiles}}
+    </p>
+    <p>
+    {{location.city}}, {{location.postalCode}}
+    </p>
+  </div>
+  <div class="summary">
+    <p>
+    {{{summary}}}
+    </p>
+  </div>
+  {{/basics}}
+</header>
+
+<main>
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    {{#work}}
+    <article>
+      <div class="location">
+        <p>
+        {{{name}}}
+        </p>
+        <p>
+        {{{location}}}
+        </p>
+      </div>
+      {{#role}}
+      <div class="position">
+        <p class="role">
+        {{{position}}}
+        </p>
+        <p>
+        {{startDate}}&mdash;{{endDate}}
+        </p>
+      </div>
+      <ul>
+        {{#highlights}}
+        <li>{{{.}}}</li>
+        {{/highlights}}
+      </ul>
+      {{/role}}
+    </article>
+    {{/work}}
+  </section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    {{#projects}}
+    <div>
+      <p>
+      {{name}}
+      </p>
+      <p>
+      {{endDate}}
+      </p>
+    </div>
+    <p>
+    {{description}}
+    </p>
+    <p>
+    {{{url}}}
+    </p>
+    <ul>
+      {{#highlights}}
+      <li>{{{.}}}</li>
+      {{/highlights}}
+    </ul>
+    {{/projects}}
+  </section>
+
+
+  <section id="skills" class="table">
+    <h2>Skills</h2>
+    {{#skills}}
+    <div>
+      <p>
+      {{{name}}}
+      </p>
+      <p>
+      {{#join}} {{{keywords}}} {{/join}}
+      </p>
+    </div>
+    {{/skills}}
+  </section>
+
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <div>
+      {{#awards}}
+      <p>
+      {{title}}, {{awarder}}
+      </p>
+      <p>
+      {{date}}
+      </p>
+      {{/awards}}
+    </div>
+  </section>
+
+
+  <section id="education">
+    <h2>Education</h2>
+    {{#education}}
+    <div>
+      <p>
+      {{institution}}, {{area}}
+      </p>
+      <p>
+      {{startDate}}&mdash;{{endDate}}
+      </p>
+    </div>
+    {{/education}}
+  </section>
+
+
+  <section id="interests" class="table">
+    <h2>Interests</h2>
+    {{#interests}}
+    <div>
+      <p>
+      {{name}}
+      </p>
+      <p>
+      {{#join}} {{{keywords}}} {{/join}}
+      </p>
+    </div>
+    {{/interests}}
+  </section>
+</main>

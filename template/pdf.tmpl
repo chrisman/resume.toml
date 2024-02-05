@@ -1,0 +1,222 @@
+.EH ''''       \" delete header (even pages)
+.OH ''''       \" delete header (odd pages)
+.nr HM .5i     \" tighter header margin
+.nr FM .5i     \" tighter footer margin
+.nr PI 2n      \" tighter paragraph indentation (for bullet lists)
+.nr PD 0       \" tighter paragraph spacing
+.nr PO 0.75i   \" smaller page offset
+.nr LL 7i      \" longer line length
+.
+.
+.
+./" ============
+./" == HEADER ==
+./" ============
+.TS
+center tab(;);
+cbx s
+c s
+c s
+c s.
+{{#basics}}
+T{
+.LG
+{{name}}
+T}
+{{email}} - {{phone}}
+{{#profiles}} {{{url}}} {{/profiles}}
+{{location.city}}, {{location.postalCode}}
+.sp 0.5
+T{
+.I
+{{{summary}}}
+T}
+{{/basics}}
+.sp 1
+.TE
+.
+.
+.
+./" ==========
+./" == WORK ==
+./" ==========
+.KS
+.TS
+center expand tab(;);
+lb s
+- -
+{{#work}}
+lb r
+{{#role}}
+lb r
+{{#highlights}}
+l s
+{{/highlights}}
+{{/role}}
+{{/work}}
+l l.
+T{
+.LG
+.LG
+Professional Experience
+T}
+{{#work}}
+T{
+.sp 0.5
+.LG
+{{{name}}}
+T};T{
+.sp 0.5
+{{{location}}}
+T}
+{{#role}}
+{{{position}}};{{startDate}}\*[-]{{endDate}}
+{{#highlights}}
+T{
+.IP \(bu
+{{{.}}}
+T}
+{{/highlights}}
+{{/role}}
+{{/work}}
+.TE
+.KE
+.
+.
+.
+.\" ==============
+.\" == PROJECTS ==
+.\" ==============
+.KS
+.TS
+center expand tab(;);
+lb s
+- -
+{{#projects}}
+lb r
+l s
+l s
+{{#highlights}}
+l s
+{{/highlights}}
+{{/projects}}
+l s.
+T{
+.LG
+.LG
+Projects
+T}
+{{#projects}}
+{{name}};{{endDate}}
+{{description}}
+{{{url}}}
+{{#highlights}}
+T{
+.IP \(bu
+{{{.}}}
+T}
+{{/highlights}}
+{{/projects}}
+.TE
+.KE
+.
+.
+.
+.\" ============
+.\" == SKILLS ==
+.\" ============
+.KS
+.TS
+center tab(;);
+lb s
+-  -
+{{#skills}}
+rw(18n) lx
+{{/skills}}
+l s.
+T{
+.LG
+.LG
+Skills
+T}
+{{#skills}}
+{{{name}}};{{#join}} {{{keywords}}} {{/join}}
+{{/skills}}
+.TE
+.KE
+.
+.
+.
+.\" ============
+.\" == AWARDS ==
+.\" ============
+.KS
+.TS
+center expand tab(;);
+lb s
+-  -
+{{#awards}}
+l r
+{{/awards}}
+l r.
+T{
+.LG
+.LG
+Awards
+T}
+{{#awards}}
+{{title}}, {{awarder}};{{date}}
+{{/awards}}
+.TE
+.KE
+.
+.
+.
+.\" ===============
+.\" == EDUCATION ==
+.\" ===============
+.KS
+.TS
+center expand tab(;);
+lb s
+-  -
+{{#education}}
+l r
+{{/education}}
+l l.
+T{
+.LG
+.LG
+Education
+T}
+{{#education}}
+{{institution}}, {{area}};{{startDate}}\*[-]{{endDate}}
+{{/education}}
+.TE
+.KE
+.
+.
+.
+.\" ===============
+.\" == INTERESTS ==
+.\" ===============
+.KS
+.TS
+center tab(;);
+lb s
+-  -
+{{#interests}}
+rw(18n) lx
+{{/interests}}
+l s.
+T{
+.LG
+.LG
+Interests
+T}
+{{#interests}}
+{{name}};{{#join}} {{{keywords}}} {{/join}}
+{{/interests}}
+.TE
+.KE
+.\" vim: filetype=groff

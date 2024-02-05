@@ -1,0 +1,199 @@
+<style>
+  body {
+    width: 8.5in;
+    margin: 0 auto;
+  }
+  p {
+    margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0 1em;
+  }
+  h2 {
+    padding: 0;
+    margin-bottom: 0;
+    border-bottom: solid 1px black;
+  }
+  header {
+    text-align: center;
+
+    .basics {
+      font-size: small;
+    }
+
+    .summary {
+      margin: 1em;
+      font-style: italic;    
+    }
+  }
+  section div {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    p:nth-child(2) {
+      text-align: right;
+    }
+  }
+  #experience div:first-child {
+    p:first-child {
+      font-weight: bold;
+      font-size: larger;
+      margin-top: 0.5em;
+    }
+  }
+  #projects > div > p:first-child {
+    font-weight: bold;
+  }
+  .role {
+    text-decoration: underline;
+    font-size: large;
+  }
+  section.table div {
+    justify-content: flex-start;
+    align-items: start;
+
+    p:first-child{
+      text-align: right;
+      width: 10em;
+      margin-right: 2em;
+    }
+
+    p:nth-child(2) {
+      text-align: left;
+    }
+  }
+</style>
+<header>
+  <h1>Richard Hendriks</h1>
+  <div class="basics">
+    <p>
+    richard.hendriks@mail.com - (912) 555-4321
+    </p>
+    <p>
+       https://soundcloud.example.com/dandymusicnl 
+    </p>
+    <p>
+    San Francisco, CA 94115
+    </p>
+  </div>
+  <div class="summary">
+    <p>
+    Richard hails from Tulsa. He has earned degrees from the University of Oklahoma and Stanford. (Go Sooners and Cardinal!) Before starting Pied Piper, he worked for Hooli as a part time software developer. While his work focuses on applied information theory, mostly optimizing lossless compression schema of both the length-limited and adaptive variants, his non-work interests range widely, everything from quantum computing to chaos theory. He could tell you about it, but THAT would NOT be a "length-limited" conversation!
+    </p>
+  </div>
+</header>
+
+<main>
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    <article>
+      <div class="location">
+        <p>
+        Pied Piper
+        </p>
+        <p>
+        Palo Alto, CA
+        </p>
+      </div>
+      <div class="position">
+        <p class="role">
+        CEO/President
+        </p>
+        <p>
+        2013-12-01&mdash;2014-12-01
+        </p>
+      </div>
+      <ul>
+        <li>Build an algorithm for artist to detect if their music was violating copy right infringement laws</li>
+        <li>Successfully won Techcrunch Disrupt</li>
+        <li>Optimized an algorithm that holds the current world record for Weisman Scores</li>
+      </ul>
+    </article>
+  </section>
+
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div>
+      <p>
+      Miss Direction
+      </p>
+      <p>
+      2016-08-24
+      </p>
+    </div>
+    <p>
+    A mapping engine that misguides you
+    </p>
+    <p>
+    missdirection.example.com
+    </p>
+    <ul>
+      <li>Won award at AIHacks 2016</li>
+      <li>Built by all women team of newbie programmers</li>
+      <li>Using modern technologies such as GoogleMaps, Chrome Extension and Javascript</li>
+    </ul>
+  </section>
+
+
+  <section id="skills" class="table">
+    <h2>Skills</h2>
+    <div>
+      <p>
+      Web Development
+      </p>
+      <p>
+       HTML, CSS, Javascript 
+      </p>
+    </div>
+    <div>
+      <p>
+      Compression
+      </p>
+      <p>
+       Mpeg, MP4, GIF 
+      </p>
+    </div>
+  </section>
+
+
+  <section id="awards">
+    <h2>Awards</h2>
+    <div>
+      <p>
+      Digital Compression Pioneer Award, Techcrunch
+      </p>
+      <p>
+      2014-11-01
+      </p>
+    </div>
+  </section>
+
+
+  <section id="education">
+    <h2>Education</h2>
+    <div>
+      <p>
+      University of Oklahoma, Information Technology
+      </p>
+      <p>
+      2011-06-01&mdash;2014-01-01
+      </p>
+    </div>
+  </section>
+
+
+  <section id="interests" class="table">
+    <h2>Interests</h2>
+    <div>
+      <p>
+      Wildlife
+      </p>
+      <p>
+       Ferrets, Unicorns 
+      </p>
+    </div>
+  </section>
+</main>
